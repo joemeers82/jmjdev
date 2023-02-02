@@ -1,0 +1,9 @@
+---
+import { CollectionEntry, getCollection } from 'astro:content';
+// import BlogPost from './BlogPost.astro';
+import Layout from './Layout.astro';
+const posts = (await getCollection('blog'))
+---
+<Layout>
+    <slot />
+</Layout>
