@@ -14,10 +14,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<BaseHead title={title} description={description} />
 	</head>
 	<body class="min-h-screen relative">
-        <p>~~~~</p>
-        <h2>{title}</h2>
-        <h2>{description}</h2>
-        <p>~~~~</p>
+        
 		<Header title={title} />
 		<main class="flex-1">
 			<slot />
