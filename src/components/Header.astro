@@ -3,11 +3,14 @@ import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 ---
 
-<header>
-	<h2 class="prose prose-2xl prose-stone">
+<header class=" mb-2">
+	<div class="flex flex-col md:flex-row">
+	<h2 class="my-5 prose prose-2xl prose-stone w-full text-center">
 		{SITE_TITLE}
 	</h2>
-	<nav>
+	<img class="rounded rounded-full mx-auto" src="/joe.png" alt="Joe Jankowski Image" height="120" width="120" loading="lazy" />
+	</div>
+	<nav class="text-center py-8">
 		<HeaderLink href="/">Home</HeaderLink>
 		<HeaderLink href="/blog">Blog</HeaderLink>
 		<!-- <HeaderLink href="/about">About</HeaderLink> -->
@@ -15,12 +18,3 @@ import { SITE_TITLE } from '../consts';
 		<HeaderLink href="https://www.linkedin.com/in/joe-meers-jankowski-5a9b6521/" target="_blank">Linkedin</HeaderLink>
 	</nav>
 </header>
-<style>
-	header {
-		margin: 0em 0 2em;
-	}
-	h2 {
-		margin: 0.5em 0;
-	}
-
-</style>

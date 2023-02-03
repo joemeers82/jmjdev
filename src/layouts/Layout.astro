@@ -22,10 +22,10 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
             gtag('config', 'G-VWGPNRPYK3');
         </script>
 	</head>
-	<body class="min-h-screen relative">
+	<body class="md:container px-8 mx-auto min-h-screen relative ">
         
 		<Header title={title} />
-		<main class="flex-1">
+		<main class="md:px-20">
 			<slot />
 		</main>
 		<Footer />
