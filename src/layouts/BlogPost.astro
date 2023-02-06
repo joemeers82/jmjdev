@@ -9,8 +9,8 @@ type Props = CollectionEntry<'blog'>['data'];
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
-<main>
-	<article>
+
+	<article class=" w-fit mx-auto">
 		{heroImage && <img width={720} height={360} src={heroImage} alt="" />}
 		<h1 class="title">{title}</h1>
 		{pubDate && <time>{pubDate}</time>}
@@ -21,7 +21,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				</div>
 			)
 		}
-		<hr />
+		
 		<slot />
 	</article>
-</main>
