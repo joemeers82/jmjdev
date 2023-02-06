@@ -3,18 +3,51 @@ import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 ---
 
-<header class=" mb-2">
-	<div class="flex flex-col md:flex-row">
-	<h2 class="my-5 prose prose-2xl prose-stone w-full text-center">
-		{SITE_TITLE}
-	</h2>
-	<img class="rounded rounded-full mx-auto" src="/joe.png" alt="Joe Jankowski Image" height="120" width="120" loading="lazy" />
+<header class=" text-center ">
+	<div class=" mx-auto grid grid-rows-2 grid-cols-4">
+		<h2 class="flex items-center  justify-center prose prose-2xl prose-stone text-center col-start-1 col-span-3 md:col-span-2 md:col-start-2 ">
+			{SITE_TITLE}
+		</h2>
+		
+		<nav class="flex  md:flex-row flex-col items-center justify-center col-start-4 col-span-1  md:row-start-2  md:col-start-2 md:col-span-2">
+			
+			<div class="p-4 space-y-2 bg-gray-600 rounded shadow md:hidden cursor-pointer" id="toggleMenu">
+				<span class="block w-8 h-0.5 bg-gray-100 animate-pulse"></span>
+				<span class="block w-8 h-0.5 bg-gray-100 animate-pulse"></span>
+				<span class="block w-8 h-0.5 bg-gray-100 animate-pulse"></span>
+			</div>
+			<ul class=" flex-col md:flex-row max-h-0 md:max-h-full overflow-hidden md:overflow-visible hidden md:flex" id="menu">
+
+
+
+				<li><HeaderLink href="/">Home</HeaderLink></li>
+				<li><HeaderLink href="/blog">Blog</HeaderLink></li>
+				<!-- <HeaderLink href="/about">About</HeaderLink> -->
+				<li><HeaderLink href="https://github.com/joemeers82" target="_blank">GitHub</HeaderLink></li>
+				<li><HeaderLink href="https://www.linkedin.com/in/joe-meers-jankowski-5a9b6521/" target="_blank">Linkedin</HeaderLink></li>
+			</ul>
+		</nav>
+		
+		<div class=" col-start-1 col-span-4 md:col-start-4 md:col-span-1 md:row-span-2">
+			<img class="rounded rounded-full mx-auto" src="/joe.png" alt="Joe Jankowski Image" height="120" width="120" loading="lazy" />
+		</div>
+	
 	</div>
-	<nav class="text-center py-8">
-		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/blog">Blog</HeaderLink>
-		<!-- <HeaderLink href="/about">About</HeaderLink> -->
-		<HeaderLink href="https://github.com/joemeers82" target="_blank">GitHub</HeaderLink>
-		<HeaderLink href="https://www.linkedin.com/in/joe-meers-jankowski-5a9b6521/" target="_blank">Linkedin</HeaderLink>
-	</nav>
+	
 </header>
+
+<script>
+	document.getElementById("toggleMenu").addEventListener('click',(e)=>{
+		document.getElementById('menu').classList.toggle('block');
+	});
+</script>
+
+<style>
+	#menu.block {
+		display:flex;
+		max-height:fit-content;
+		position: absolute;
+		top:120px;
+		transition: all .3s ease-in-out;
+	}
+</style>
